@@ -19,8 +19,10 @@ import Feedback from "./router/Feedback";
 import Logout from "./router/Logout";
 import Login from "./router/Login";
 import Signup from "./router/Signup";
-import SecA from './Attendance/SecA'
-import SecB from './Attendance/SecB'
+import SecA from "./Attendance/SecA";
+import SecB from "./Attendance/SecB";
+
+
 export const TOAST_SUCCESS = "toast_success";
 export const TOAST_ERROR = "toast_error";
 
@@ -47,7 +49,7 @@ function App() {
     }
   }, [toastData]);
   return (
-    <div className="App">
+    <div className="App bg-gradient-to-b from-indigo-900 to-purple-900 min-h-[100vh]">
       <LoadingBar color="#f11946" ref={loadingRef} />
       <div>
         <Toaster />
@@ -70,6 +72,7 @@ function App() {
         <Route path="/attendance" element={<Attendance />}>
                <Route path="secA" element={<SecA/>}  />
                <Route path="secB" element={<SecB/>}  />
+               <Route path="chart" element={<Chart/>}  />
         </Route>
         
         <Route path="/logout" element={<Logout />} />
@@ -77,6 +80,8 @@ function App() {
         <Route path="/budgets" element={<Budget />} />
         <Route path="/feedback" element={<Feedback />} />
       </Routes>
+
+      
     </div>
   );
 }

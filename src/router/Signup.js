@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Outlet, useNavigate } from "react-router-dom";
 import teacher from "../assets/img/teacher.png";
 import student from "../assets/img/student.png";
+import bg from "../assets/img/meetup.jpg";
 function Signup() {
   const [flag, setFlag] = useState(true);
 
@@ -11,16 +12,34 @@ function Signup() {
 
   const navigate = useNavigate();
   return (
+
+    <div
+      className={`bg-cover bg-center bg-no-repeat w-screen h-screen`}
+      style={
+        flag
+          ? {
+              backgroundImage: `url(${bg})`,
+              backgroundColor: "rgba(255, 255, 255, 0.5)",
+              // opacity: '0.5'
+            }
+          : { backgroundColor: "white" }
+      }
+    >
+      {flag ? (
+        <div className="absolute h-[120vh]  top-20 left-0 right-0 bottom-0 bg-gray-700 opacity-40"></div>
+      ) : (
+        ""
+      )}
     <div>
       {flag ? (
-        <div className="max-w-[900px] mx-auto justify-center mt-16 items-center font-mullish flex  flex-wrap gap-10 ">
-          <div className="w-[335px] h-[335px] bg-yellow-400 flex justify-center items-center rounded-md shadow-lg">
+        <div className="max-w-[900px] mx-auto justify-between mt-16 items-center font-mullish flex  flex-wrap gap-10 ">
+          <div className="w-[400px] h-[400px] bg-yellow-400 flex justify-center items-center rounded-md ">
             <div
               onClick={() => {
                 setFlag(!flag);
                 navigate("/signup/teacher");
               }}
-              className="border border-green-500 bg-[#8aadea] shadow-lg flex flex-col justify-center items-center cursor-pointer rounded-md w-[320px] h-[320px] p-6 transition duration-300 ease-in-out transform hover:scale-105"
+              className="border border-green-500 bg-[#8aadea]  flex flex-col justify-center items-center cursor-pointer rounded-md w-[380px] h-[380px] p-6 transition duration-300 ease-in-out transform hover:scale-105"
             >
               <h1 className="font-bold text-2xl mb-4 text-center text-green-700">
                 Signup As <span className="text-violet-800">Teacher</span>
@@ -39,13 +58,13 @@ function Signup() {
             </div>
           </div>
 
-          <div className="w-[335px] h-[335px] bg-green-400 flex justify-center items-center rounded-md shadow-lg">
+          <div className="w-[400px] h-[400px] bg-green-400 flex justify-center items-center rounded-md ">
             <div
               onClick={() => {
                 setFlag(!flag);
                 navigate("/signup/student");
               }}
-              className="border border-green-500 bg-[#eca0d7] shadow-lg flex flex-col justify-center items-center cursor-pointer rounded-md w-[320px] h-[320px] p-6 transition duration-300 ease-in-out transform hover:scale-105"
+              className="border border-green-500 bg-[#eca0d7]  flex flex-col justify-center items-center cursor-pointer rounded-md w-[380px] h-[380px] p-6 transition duration-300 ease-in-out transform hover:scale-105"
             >
               <h1 className="font-bold text-2xl mb-4 text-center text-green-700">
                 Signup As <span className="text-violet-800">Student</span>
@@ -67,6 +86,7 @@ function Signup() {
       ) : (
         <Outlet />
       )}
+    </div>
     </div>
   );
 }
