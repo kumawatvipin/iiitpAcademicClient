@@ -3,23 +3,28 @@ import { Checkbox, Form, Input } from "antd";
 
 import { Link, useNavigate } from "react-router-dom";
 import { axiosClient } from "../utils/axiosClient";
-import { Key_Access_Token, TeacherSubject, count_User, setItem,getItem } from "../utils/localStorage";
+import {
+  Key_Access_Token,
+  TeacherSubject,
+  count_User,
+  setItem,
+  getItem,
+} from "../utils/localStorage";
 import { useDispatch } from "react-redux";
 import { setcount, showToast } from "../slice/appConfigSlice";
-import { TOAST_SUCCESS } from "../App";
+import { TOAST_ERROR, TOAST_SUCCESS } from "../App";
 // import {  TeacherSubject, getItem } from "../utils/localStorage";
 function Login() {
   const navigate = useNavigate();
   const [email, setemail] = useState("");
   const [password, setpassword] = useState("");
   const [subject, setSubject] = useState("");
-//   const [subject, setpassword] = useState("");
-  
-  
-//   if(subject==null ){
-//     navigate('/signup')
-//   }
-//   console.log("subject" + subject);
+  //   const [subject, setpassword] = useState("");
+
+  //   if(subject==null ){
+  //     navigate('/signup')
+  //   }
+  //   console.log("subject" + subject);
   const dispatch = useDispatch();
   // const [count, setcount1] = useState(0);
   async function submitHandle(e) {
@@ -29,10 +34,10 @@ function Login() {
       const result = await axiosClient.post("/teacher/login", {
         email,
         password,
-        subject
+        subject,
       });
       // console.log(result);
-      setItem(TeacherSubject,result.result.subject)
+      setItem(TeacherSubject, result.result.subject);
       setItem(Key_Access_Token, result.result.token);
       // console.log(getItem(TeacherSubject));
       dispatch(
@@ -49,13 +54,11 @@ function Login() {
     }
   }
 
-  
   // useEffect(() => {
   //   countU();
   // }, []);
   return (
-    <div class="grid  lg:grid-cols-2 mx-auto lg:mx-72 mb-4 items-center ">
-      
+    <div class="grid  mx-auto  items-center ">
       <div class="flex  flex-col justify-center items-center mx-auto h-[420px] mb-5 lg:h-[400px] lg:p-10 p-6  border-2 max-w-[600px] rounded-lg mt-11  border-green-400">
         <Form
           name="basic"
@@ -86,7 +89,7 @@ function Login() {
             <Input
               class=""
               placeholder="email"
-              onChange={(e) => setemail(e.target.value)}
+              onChange={e => setemail(e.target.value)}
             />
           </Form.Item>
           <Form.Item
@@ -102,7 +105,7 @@ function Login() {
             <Input
               class=""
               placeholder="email"
-              onChange={(e) => setSubject(e.target.value)}
+              onChange={e => setSubject(e.target.value)}
             />
           </Form.Item>
 
@@ -118,11 +121,9 @@ function Login() {
           >
             <Input.Password
               placeholder="password"
-              onChange={(e) => setpassword(e.target.value)}
+              onChange={e => setpassword(e.target.value)}
             />
           </Form.Item>
-
-          
 
           <Form.Item
             wrapperCol={{
@@ -146,7 +147,7 @@ function Login() {
         <h1 class="m-1 p-2 ">
           Do not have account{" "}
           <Link
-            to="/auth/signup"
+            to="/signup"
             class="bg-blue-700 p-2 m-1 px-2 text-xl rounded-md text-white mb-3 hover:bg-blue-600 transition-all duration-200 "
           >
             SignUp

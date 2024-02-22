@@ -5,10 +5,15 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { showToast } from "../slice/appConfigSlice";
 import { TOAST_ERROR, TOAST_SUCCESS } from "../App";
-import { Key_Access_Token, TeacherSem, TeacherSubject, setItem } from "../utils/localStorage";
-
+import {
+  Key_Access_Token,
+  TeacherSem,
+  TeacherSubject,
+  setItem,
+} from "../utils/localStorage";
 
 function TeacherSignup() {
+  console.log("TeacherSignup rendered");
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -29,11 +34,11 @@ function TeacherSignup() {
         subject,
         sem,
       });
-      setItem(TeacherSubject,subject);
-      setItem(TeacherSem,sem);
-      setItem(Key_Access_Token,result.result.token)
-    //   console.log(result);
-      
+      setItem(TeacherSubject, subject);
+      setItem(TeacherSem, sem);
+      setItem(Key_Access_Token, result.result.token);
+      console.log(result);
+
       setTimeout(() => {
         dispatch(
           showToast({
@@ -44,17 +49,18 @@ function TeacherSignup() {
       }, 1000);
       if (result) {
         //
-        // navigate("/auth/login");
+        navigate("/teacherLogin");
       }
-    } catch (e) {}
+    } catch (err) {
+      console.log(err);
+    }
     // console.log('vipin');
-    
   }
   // console.log(error);
 
   return (
     <div class="grid items-center mx-auto ">
-      <div class="flex flex-col  p-15 mx-3 mt-10 max-h-[700px] justify-center items-center sm:mx-auto sm:h-[450px] sm:p-10  border-2 sm:max-w-[600px] mb-5 rounded-lg sm:mt-2  border-green-400">
+      <div class="flex flex-col z-50 p-15 mx-3 mt-10 max-h-[700px] justify-center items-center sm:mx-auto sm:h-[450px] sm:p-10  border-2 sm:max-w-[600px] mb-5 rounded-lg sm:mt-2  border-green-400">
         <h1 class="text-xl hidden sm:block  p-2 m-3 text-red-500">
           SignUp for accessing website
         </h1>
