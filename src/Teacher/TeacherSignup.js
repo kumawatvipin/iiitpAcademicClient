@@ -49,7 +49,7 @@ function TeacherSignup() {
       }, 1000);
       if (result) {
         //
-        navigate("/teacherLogin");
+        navigate("/login");
       }
     } catch (err) {
       console.log(err);
