@@ -43,7 +43,7 @@ axiosClient.interceptors.response.use(
           withCredentials: true,
         })
         // .get(`http://localhost:4003/teacher/refresh`);
-      .get(`${process.env.REACT_APP_SERVER_BASE_URL}/teacher/refresh`);
+        .get(`${process.env.REACT_APP_SERVER_BASE_URL}/teacher/refresh`);
 
       // console.log("respone from backend", response);
       if (response.data.status === "ok") {
@@ -55,7 +55,7 @@ axiosClient.interceptors.response.use(
         return axios(OriginalRequest);
       } else {
         deleteUser(Key_Access_Token);
-        window.location.replace("/teacherlogin", "_self");
+        window.location.replace("/login", "_self");
 
         return Promise.reject(error);
       }

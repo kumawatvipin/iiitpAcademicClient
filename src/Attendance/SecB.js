@@ -36,7 +36,17 @@ function SecA() {
       }
     }
   }, []);
-
+  async function handleUpdate() {
+    try {
+      const user = await axiosClient.post(`attendance/update/${subject}`, {
+        sec: "B",
+        data,
+      });
+      alert("Submitted");
+    } catch (error) {
+      alert(error);
+    }
+  }
   return (
     <>
       {flag ? (
@@ -60,7 +70,8 @@ function SecA() {
               return (
                 <>
                   <hr
-                    style={{ color: "black", width: "100%", height: "2px" }}
+                    style={{ width: "100%", height: "2px" }}
+                    className="bg-gray-700"
                   />
                   <div className="flex gap-2 py-2  items-center ">
                     <h1 className="w-[100px]">{item?.MIS}</h1>
@@ -90,6 +101,16 @@ function SecA() {
               );
             })}
           </div>
+          <hr
+            style={{ width: "100%", height: "2px" }}
+            className="bg-gray-700"
+          />
+          <button
+            className="bg-red-500 w-[200px] py-4 mt-8 mb-10  font-bold text-2xl  rounded-md hover:scale-110 transition-all duration-500 flex justify-center items-center mx-auto  "
+            onClick={handleUpdate}
+          >
+            Submit
+          </button>
         </div>
       ) : (
         <div></div>

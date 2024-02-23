@@ -7,8 +7,6 @@ import TeacherSignup from "./Teacher/TeacherSignup";
 import TeacherLogin from "./Teacher/TeacherLogin";
 import StudentSignup from "./Student/StudentSignup";
 import StudentLogin from "./Student/StudentLogin";
-import Show from "./Attendance/Show";
-import Anni from "./Annimation/Anni";
 import Chart from "./Attendance/Chart";
 import { Route, Routes } from "react-router-dom";
 import Home from "./router/Home";
@@ -21,7 +19,16 @@ import Login from "./router/Login";
 import Signup from "./router/Signup";
 import SecA from "./Attendance/SecA";
 import SecB from "./Attendance/SecB";
+import DLD from "./Feedback/Sem2/DLD";
+import DSA from "./Feedback/Sem2/DSA";
+import EM2 from "./Feedback/Sem2/EM2";
+import Humanity from "./Feedback/Sem2/Humanity";
+import OOPL from "./Feedback/Sem2/OOPL";
+import EStudies from "./Feedback/Sem2/EStudies";
+import CNV from "./Feedback/Sem2/CNV";
 
+import PlagChecker from "./PlagChecker/PlagChecker";
+import Assignment from "./Assignment/Assignment";
 
 export const TOAST_SUCCESS = "toast_success";
 export const TOAST_ERROR = "toast_error";
@@ -68,20 +75,31 @@ function App() {
 
           <Route path="student" element={<StudentSignup />} />
         </Route>
-        
-        <Route path="/attendance" element={<Attendance />}>
-               <Route path="secA" element={<SecA/>}  />
-               <Route path="secB" element={<SecB/>}  />
-               <Route path="chart" element={<Chart/>}  />
-        </Route>
-        
-        <Route path="/logout" element={<Logout />} />
-        
-        <Route path="/budgets" element={<Budget />} />
-        <Route path="/feedback" element={<Feedback />} />
-      </Routes>
 
-      
+        <Route path="/attendance" element={<Attendance />}>
+          <Route path="" element={<Chart />} />
+          <Route path="secA" element={<SecA />} />
+          <Route path="secB" element={<SecB />} />
+          <Route path="chart" element={<Chart />} />
+        </Route>
+
+        <Route path="/logout" element={<Logout />} />
+
+        <Route path="/plagchecker" element={<PlagChecker />} />
+        <Route path="/assignment" element={<Assignment />} />
+
+        <Route path="/budgets" element={<Budget />} />
+
+        <Route path="/feedback" element={<Feedback />}>
+          <Route path="dld" element={<DLD />} />
+          <Route path="dsa" element={<DSA />} />
+          <Route path="em2" element={<EM2 />} />
+          <Route path="estudies" element={<EStudies />} />
+          <Route path="oopl" element={<OOPL />} />
+          <Route path="cnv" element={<CNV />} />
+          <Route path="humanity" element={<Humanity />} />
+        </Route>
+      </Routes>
     </div>
   );
 }

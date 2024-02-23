@@ -6,7 +6,10 @@ import { Key_Access_Token, getItem } from "../utils/localStorage";
 function Navbar() {
   const AA = getItem(Key_Access_Token);
   return (
-    <div className="w-full  bg-[#957fec] ">
+    <div
+      className="w-full  bg-[#957fec] text-xl "
+      style={{ textShadow: "10px 10px 10px rgba(0,0,0,.2)" }}
+    >
       <div className="max-w-[1300px] z-50  mx-auto overflow-hidden flex justify-evenly items-center   ">
         <div>
           <a href="#">
@@ -14,7 +17,7 @@ function Navbar() {
           </a>
         </div>
 
-        <ul className="flex gap-10 mx-auto items-center mt-2  font-mullish text-deepBlue justify-center text-2xl">
+        <ul className="flex gap-10 mx-auto items-center mt-2  font-mullish text-deepBlue justify-center text-xl">
           {NavbarItem?.map(item => {
             return (
               <li>
@@ -43,7 +46,7 @@ function Navbar() {
               <li>
                 <Link
                   to="/signup"
-                  className="bg-yellow-500 rounded-sm p-2 hover:bg-yellow-400 transition-all duration-300  text-white"
+                  className="bg-yellow-500 rounded-lg p-2 hover:bg-yellow-400 transition-all duration-300  text-white"
                 >
                   Signup
                 </Link>
@@ -51,7 +54,7 @@ function Navbar() {
               <li>
                 <Link
                   to="/login"
-                  className="bg-green-500 rounded-sm p-2 hover:bg-green-400 transition-all duration-300  text-white"
+                  className="bg-green-500 rounded-lg p-2 hover:bg-green-400 transition-all duration-300  text-white"
                 >
                   Login
                 </Link>

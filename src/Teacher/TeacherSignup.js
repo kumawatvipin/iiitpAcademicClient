@@ -37,7 +37,7 @@ function TeacherSignup() {
       setItem(TeacherSubject, subject);
       setItem(TeacherSem, sem);
       setItem(Key_Access_Token, result.result.token);
-      console.log(result);
+      // console.log(result);
 
       setTimeout(() => {
         dispatch(
@@ -59,30 +59,11 @@ function TeacherSignup() {
   // console.log(error);
 
   return (
-    <div class="grid items-center mx-auto ">
-      <div class="flex flex-col z-50 p-15 mx-3 mt-10 max-h-[700px] justify-center items-center sm:mx-auto sm:h-[450px] sm:p-10  border-2 sm:max-w-[600px] mb-5 rounded-lg sm:mt-2  border-green-400">
-        <h1 class="text-xl hidden sm:block  p-2 m-3 text-red-500">
-          SignUp for accessing website
-        </h1>
-        <Form
-          onSubmit={handleSignup}
-          name="basic"
-          labelCol={{
-            span: 8,
-          }}
-          wrapperCol={{
-            span: 16,
-          }}
-          style={{
-            maxWidth: 600,
-          }}
-          initialValues={{
-            remember: true,
-          }}
-          autoComplete="off"
-        >
+    <div class=" mx-auto ">
+      <div class="font-mullish text-white pt-8 bg-blue-700 h-[500px] gap-4 mt-4 p-3 flex flex-col justify-center items-center mx-auto  max-w-[500px] rounded-md">
+        <h1 className=" text-3xl font-bold   "> Teacher Signup</h1>
+        <Form onSubmit={handleSignup}>
           <Form.Item
-            label="Name"
             name="name"
             rules={[
               {
@@ -92,13 +73,13 @@ function TeacherSignup() {
             ]}
           >
             <Input
-              placeholder="vipin"
+              placeholder="Name"
+              className="min-w-[300px] py-3"
               onChange={e => setname(e.target.value)}
             />
           </Form.Item>
 
           <Form.Item
-            label="email"
             name="email"
             rules={[
               {
@@ -110,12 +91,12 @@ function TeacherSignup() {
             <Input
               class=""
               type="email"
-              placeholder="vipin...6@gmail.com"
+              className="min-w-[300px] py-3"
+              placeholder="Enter your Email"
               onChange={e => setemail(e.target.value)}
             />
           </Form.Item>
           <Form.Item
-            label="sem"
             name="sem"
             rules={[
               {
@@ -125,14 +106,13 @@ function TeacherSignup() {
             ]}
           >
             <Input
-              class=""
               type="sem"
-              placeholder="1"
+              placeholder="Semester"
+              className="min-w-[300px] py-3"
               onChange={e => setSem(e.target.value)}
             />
           </Form.Item>
           <Form.Item
-            label="subject"
             name="subject"
             rules={[
               {
@@ -144,13 +124,13 @@ function TeacherSignup() {
             <Input
               class=""
               type="subject"
-              placeholder="ABC"
+              placeholder="Subject"
+              className="min-w-[300px] py-3"
               onChange={e => setSubject(e.target.value)}
             />
           </Form.Item>
 
           <Form.Item
-            label="Password"
             name="password"
             rules={[
               {
@@ -161,21 +141,17 @@ function TeacherSignup() {
           >
             <Input.Password
               placeholder="password"
+              className="min-w-[300px] py-3"
               onChange={e => setpassword(e.target.value)}
             />
           </Form.Item>
 
-          <Form.Item
-            wrapperCol={{
-              offset: 8,
-              span: 1,
-            }}
-          >
+          <Form.Item>
             <button
-              class="bg-blue-500 w-[100px] text-white rounded-md text-lg hover:bg-blue-600 transition-all duration-200 p-1 "
+              className=" mx-auto text-center flex justify-center items-center  bg-violet-700 rounded-md text-2xl p-1 px-3 text-white hover:bg-blue-600 transition-all duration-200  "
               onClick={handleSignup}
             >
-              Sign-Up
+              SignUp
             </button>
           </Form.Item>
         </Form>

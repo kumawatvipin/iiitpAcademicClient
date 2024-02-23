@@ -14,7 +14,6 @@ function SecA() {
     }, 1000);
   };
   if (subject == null) {
-
     BB();
   }
   const [data, setData] = useState([{}]);
@@ -26,9 +25,7 @@ function SecA() {
         sec: "A",
       });
       setData(user?.result?.secA || [{}]);
-    } catch (error) {
-      
-    }
+    } catch (error) {}
     // console.log(user);
     // console.log(user.result.secA);
   };
@@ -40,6 +37,17 @@ function SecA() {
     }
   }, []);
 
+  async function handleUpdate() {
+    try {
+      const user = await axiosClient.post(`attendance/update/${subject}`, {
+        sec: "A",
+        data,
+      });
+      alert("Submitted");
+    } catch (error) {
+      alert(error);
+    }
+  }
   return (
     <>
       {flag ? (
@@ -59,11 +67,11 @@ function SecA() {
               if (index === 0) {
                 return "";
               }
-             
+
               return (
                 <>
                   <hr
-                    style={{width: "100%", height: "2px" }}
+                    style={{ width: "100%", height: "2px" }}
                     className="bg-gray-700"
                   />
                   <div className="flex gap-2 py-2  items-center ">
@@ -94,6 +102,18 @@ function SecA() {
               );
             })}
           </div>
+
+          <hr
+            style={{ width: "100%", height: "2px" }}
+            className="bg-gray-700"
+          />
+
+          <button
+            className="bg-red-500 w-[200px] py-4 mt-8 mb-10  font-bold text-2xl  rounded-md hover:scale-110 transition-all duration-500 flex justify-center items-center mx-auto  "
+            onClick={handleUpdate}
+          >
+            Submit
+          </button>
         </div>
       ) : (
         <div></div>

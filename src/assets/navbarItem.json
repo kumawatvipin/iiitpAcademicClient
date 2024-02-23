@@ -1,18 +1,22 @@
 [
-    
-    {
-        "link":"/attendance",
-        "tag":"Attendance"
-    },
-    {
-        "link":"/budgets",
-        "tag":"Budget"
-    },
-    {
-        "link":"/feedback",
-        "tag":"Feedback"
-    }
-    
-    
-   
+  {
+    "link": "/attendance",
+    "tag": "Attendance"
+  },
+  {
+    "link": "/feedback",
+    "tag": "Feedback"
+  },
+  {
+    "link": "/plagchecker",
+    "tag": "Plagiarism"
+  },
+  {
+    "link": "/assignment",
+    "tag": "Assignment"
+  },
+  {
+    "link": "/budgets",
+    "tag": "Budget"
+  }
 ]
