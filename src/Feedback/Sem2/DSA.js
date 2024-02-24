@@ -48,7 +48,7 @@ function DSA() {
 
   return (
     <>
-      <div className="flex bg-gray-800 mx-auto w-[800px] mt-10 flex-col rounded-lg p-4   pb-10 gap-4">
+      <div className="flex  mx-auto w-[800px] mt-5 flex-col rounded-lg p-4   pb-10 gap-4">
         <BlackBox
           subject="Data Structure & Algorithms"
           percentage={percentage}

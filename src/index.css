@@ -52,3 +52,7 @@ form input {
 .recover a {
   text-decoration: none;
 }
+
+.rotate-3d {
+  transform: rotateY(10deg); /* Adjust the value as per your preference */
+}
