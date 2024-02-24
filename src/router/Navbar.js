@@ -1,14 +1,27 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 import logo from "../assets/img/logo.png";
 import NavbarItem from "../assets/navbarItem.json";
 import { Link } from "react-router-dom";
 import { Key_Access_Token, getItem } from "../utils/localStorage";
+
 function Navbar() {
   const AA = getItem(Key_Access_Token);
-  const [flag, setFlag] = useState(true);
+  const location = useLocation(); // Get current location
+  const [isNavbarVisible, setIsNavbarVisible] = useState(true);
+
+  useEffect(() => {
+    // Set Navbar visibility based on current location
+    if (location.pathname === "/budgets") {
+      setIsNavbarVisible(false);
+    } else {
+      setIsNavbarVisible(true);
+    }
+  }, [location]);
+
   return (
     <div>
-      {flag ? (
+      {isNavbarVisible && (
         <div
           className="w-full  bg-[#957fec] text-xl "
           style={{ textShadow: "10px 10px 10px rgba(0,0,0,.2)" }}
@@ -23,7 +36,7 @@ function Navbar() {
             <ul className="flex gap-10 mx-auto items-center mt-2  font-mullish text-deepBlue justify-center text-xl">
               {NavbarItem?.map(item => {
                 return (
-                  <li>
+                  <li key={item.link}>
                     <Link
                       to={item.link}
                       className=" hover:underline transition-all duration-500"
@@ -33,7 +46,7 @@ function Navbar() {
                   </li>
                 );
               })}
-              <li onClick={() => setFlag(!flag)}>
+              <li>
                 <Link
                   to="/budgets"
                   className=" hover:underline transition-all duration-500"
@@ -42,8 +55,6 @@ function Navbar() {
                 </Link>
               </li>
             </ul>
-
-            
 
             <div>
               {AA ? (
@@ -77,8 +88,6 @@ function Navbar() {
             </div>
           </div>
         </div>
-      ) : (
-        ""
       )}
     </div>
   );
