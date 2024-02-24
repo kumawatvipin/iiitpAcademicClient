@@ -26,7 +26,6 @@ function SecA() {
       });
       setData(user?.result?.secA || [{}]);
     } catch (error) {}
-    // console.log(user);
     // console.log(user.result.secA);
   };
   useEffect(() => {

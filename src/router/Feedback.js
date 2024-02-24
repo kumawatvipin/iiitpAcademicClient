@@ -24,12 +24,7 @@ function Feedback() {
       Rating: 160,
       amt: 170,
     },
-    {
-      name: "Value",
-      uv: 170,
-      Rating: 111,
-      amt: 170,
-    },
+    
     {
       name: "Clarity",
       uv: 170,
@@ -43,7 +38,13 @@ function Feedback() {
       amt: 120,
     },
     {
-      name: "Instructors",
+      name: "Skill",
+      uv: 170,
+      Rating: 111,
+      amt: 170,
+    },
+    {
+      name: "Presentation",
       uv: 170,
       Rating: 135,
       amt: 170,
@@ -66,11 +67,11 @@ function Feedback() {
   const getIntroOfPage = label => {
     if (label === "Depth") {
       return "Coverage and depth of the subject was";
-    } else if (label === "Value") {
+    } else if (label === "Skill") {
       return "Value addition towards knowledge & Skill upgradation";
     } else if (label === "Clarity") {
       return "In terms of organization, clarity and presentation of the fundamental concepts, the lectures were";
-    } else if (label === "Instructors") {
+    } else if (label === "Presentation") {
       return " Instructor's oral presentation in terms of audibility and articulation was";
     } else if (label === "Encourage") {
       return "Encouragement given by the instructor to think and reason,logically and objectively";

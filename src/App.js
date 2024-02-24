@@ -99,6 +99,7 @@ function App() {
           <Route path="cnv" element={<CNV />} />
           <Route path="humanity" element={<Humanity />} />
         </Route>
+        
       </Routes>
     </div>
   );
