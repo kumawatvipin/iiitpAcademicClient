@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import arrow from "../assets/img/link.png";
 import saraswati from "../assets/img/saraswati.png";
-
+import Footer from "./Footer";
 function Home() {
   const features = [
     {
@@ -59,29 +59,28 @@ function Home() {
         </motion.p>
       </div>
       <div className="mx-auto flex-col py-6 text-center flex justify-center items-center">
-      <motion.h1
-        initial={{ opacity: 0, y: -100 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 2.5, delay: 1.5 }}
-        className="text-xl md:text-2xl flex items-center px-4 font-bold mb-4 text-white"
-        style={{
-          textShadow: "2px 2px 4px rgba(0,0,0,0.6)",
-        }}
-      >
-        या देवी सर्वभूतेषु विद्यारूपेण संस्थिता
-        <img src={saraswati} alt="" className="ml-2 rotate-3d" />
-        नमस्तस्यै नमस्तस्यै नमस्तस्यै नमो नमः॥
-      </motion.h1>
-      <motion.p
-        initial={{ opacity: 0, y: -50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 3, delay: 2 }}
-        className="text-xl md:text-3xl mb-8"
-      >
-        विद्यारम्भं करिष्यामि सिद्धिर्भवतु में सदा॥
-      </motion.p>
-    </div>
-
+        <motion.h1
+          initial={{ opacity: 0, y: -100 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 2.5, delay: 1.5 }}
+          className="text-xl md:text-2xl flex items-center px-4 font-bold mb-4 text-white"
+          style={{
+            textShadow: "2px 2px 4px rgba(0,0,0,0.6)",
+          }}
+        >
+          या देवी सर्वभूतेषु विद्यारूपेण संस्थिता
+          <img src={saraswati} alt="" className="ml-2 rotate-3d" />
+          नमस्तस्यै नमस्तस्यै नमस्तस्यै नमो नमः॥
+        </motion.h1>
+        <motion.p
+          initial={{ opacity: 0, y: -50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 3, delay: 2 }}
+          className="text-xl md:text-3xl mb-8"
+        >
+          विद्यारम्भं करिष्यामि सिद्धिर्भवतु में सदा॥
+        </motion.p>
+      </div>
 
       <div className="container mx-auto  py-12">
         <motion.h2
@@ -135,11 +134,14 @@ function Home() {
         </div>
       </div>
 
-      <footer className="bg-gray-800 py-4 text-center">
-        <p className="text-white">
-          &copy; 2024 Academify. All rights reserved.
-        </p>
-      </footer>
+      <motion.h2
+        initial={{ opacity: 0, y: -50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 4, delay: 4.5 }}
+        className=""
+      >
+        {<Footer />}
+      </motion.h2>
     </div>
   );
 }

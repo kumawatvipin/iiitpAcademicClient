@@ -24,7 +24,7 @@ function PlagChecker() {
       setMessage(
         `The project "${trimmedTitleWithSingleSpaces}" is related to: ${relatedTopics.join(", ")}. It's already covered.`
       );
-      alert("Already Exists!");
+      alert("We find Something Related!");
     } else {
       setMessage(
         `The project "${trimmedTitleWithSingleSpaces}" is not related to any of the topics. It's unique.`

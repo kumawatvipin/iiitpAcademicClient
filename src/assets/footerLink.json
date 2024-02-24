@@ -1,5 +1,9 @@
 [
   {
+    "link": "/",
+    "tag": "Academify"
+  },
+  {
     "link": "/attendance",
     "tag": "Attendance"
   },
@@ -17,8 +21,14 @@
   },
   {
     "link": "/budgets",
-    "tag": "Budgets"
+    "tag": "Budget"
+  },
+  {
+    "link": "/login",
+    "tag": "Login"
+  },
+  {
+    "link": "/signup",
+    "tag": "Signup"
   }
-  
-  
 ]

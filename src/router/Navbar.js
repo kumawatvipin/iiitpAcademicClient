@@ -46,14 +46,7 @@ function Navbar() {
                   </li>
                 );
               })}
-              <li>
-                <Link
-                  to="/budgets"
-                  className=" hover:underline transition-all duration-500"
-                >
-                  Budget
-                </Link>
-              </li>
+            
             </ul>
 
             <div>
