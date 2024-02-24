@@ -107,7 +107,7 @@ function Feedback() {
             left: 20,
             bottom: 5,
           }}
-          className="text-white text-xl"
+          className="text-white  text-xl"
         >
           <CartesianGrid   strokeDasharray="3 3" />
           <XAxis stroke="#8884d8" dataKey="name" />
