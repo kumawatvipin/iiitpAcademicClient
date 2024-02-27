@@ -34,7 +34,7 @@ function Navbar() {
             </div>
 
             <ul className="flex gap-10 mx-auto items-center mt-2  font-mullish text-deepBlue justify-center text-xl">
-              {NavbarItem?.map(item => {
+              {NavbarItem?.map((item) => {
                 return (
                   <li key={item.link}>
                     <Link
@@ -46,7 +46,14 @@ function Navbar() {
                   </li>
                 );
               })}
-            
+              <li>
+                <Link
+                  to="/budgets"
+                  className=" hover:underline transition-all duration-500"
+                >
+                  Budget
+                </Link>
+              </li>
             </ul>
 
             <div>

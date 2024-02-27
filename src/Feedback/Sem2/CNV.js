@@ -74,7 +74,7 @@ function CNV() {
             </h2>
 
             <div className="flex flex-row gap-5">
-              {/* Radio buttons */}
+              
               {[1, 2, 3, 4, 5].map(value => (
                 <label
                   key={value}
@@ -110,7 +110,7 @@ function CNV() {
           </div>
         ))}
 
-        {/* Additional comments section */}
+        
         <div className="border-2 w-[700px] mx-auto p-5 flex flex-col gap-5 bg-white border-gray-500 rounded-md">
           <h1 style={{ fontWeight: "bold" }}>
             14. Please give additional comments to improve the subject
@@ -124,7 +124,7 @@ function CNV() {
             className="border rounded-md p-2"
           />
 
-          {/* Submit button */}
+          
           <button
             onClick={handleSubmit}
             className="text-center mx-auto w-[100px] text-white font-bold border rounded-md bg-red-500 p-2"

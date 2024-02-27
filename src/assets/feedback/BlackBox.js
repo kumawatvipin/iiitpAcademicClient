@@ -19,7 +19,7 @@ function BlackBox({
 
   return (
     <>
-      <div className="border-2 mt-8 w-[700px] mx-auto p-5 flex flex-col gap-5 bg-white  border-gray-500 rounded-md">
+      <div  className="border-2 mt-8 w-[700px] mx-auto p-5 flex flex-col gap-5 bg-white  border-gray-500 rounded-md">
         <div className="text" style={{ textAlign: "center" }}>
           <h1 style={{ fontSize: "1.5em", fontWeight: "bold" }}>
             SUBJECT FEEDBACK FORM{" "}

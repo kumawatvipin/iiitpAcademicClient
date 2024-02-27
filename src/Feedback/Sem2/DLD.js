@@ -57,6 +57,7 @@ function DLD() {
           setCGPA={setCGPA}
           setEmail={setEmail}
           setDate={setDate}
+          
         />
 
         {Data.map(item => (
