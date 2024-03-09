@@ -4,6 +4,10 @@
     "tag": "Attendance"
   },
   {
+    "link": "/student/attendanceshow",
+    "tag": "ShowAtt"
+  },
+  {
     "link": "/feedback",
     "tag": "Feedback"
   },

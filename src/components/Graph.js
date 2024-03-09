@@ -27,7 +27,7 @@ export default function Graph() {
           <h3 className="mb-4 font-bold title">
             Total
             <span className="block text-3xl text-emerald-400">
-              ${getTotal(data) ?? 0}
+            ₹{getTotal(data) ?? 0}
             </span>
           </h3>
         </div>

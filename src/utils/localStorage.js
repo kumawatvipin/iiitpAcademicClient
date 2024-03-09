@@ -2,6 +2,8 @@ export const Key_Access_Token="access_token";
 export const count_User="countUser";
 export const TeacherSubject="subject";
 export const TeacherSem="sem";
+export const StudentSem="sub";
+export const StudentMIS="mis";
 export function getItem(key){
     return localStorage.getItem(key);
 }

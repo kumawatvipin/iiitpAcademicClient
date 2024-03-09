@@ -29,6 +29,7 @@ import CNV from "./Feedback/Sem2/CNV";
 
 import PlagChecker from "./PlagChecker/PlagChecker";
 import Assignment from "./Assignment/Assignment";
+import Student from "./Attendance/Student";
 
 export const TOAST_SUCCESS = "toast_success";
 export const TOAST_ERROR = "toast_error";
@@ -62,6 +63,7 @@ function App() {
         <Toaster />
       </div>
       <Navbar />
+
       <Routes>
         <Route path="/" element={<Home />} />
 
@@ -82,7 +84,8 @@ function App() {
           <Route path="secB" element={<SecB />} />
           <Route path="chart" element={<Chart />} />
         </Route>
-
+          
+         <Route path="/student/attendanceshow" element={<Student />} />
         <Route path="/logout" element={<Logout />} />
 
         <Route path="/plagchecker" element={<PlagChecker />} />
@@ -99,8 +102,8 @@ function App() {
           <Route path="cnv" element={<CNV />} />
           <Route path="humanity" element={<Humanity />} />
         </Route>
-        
       </Routes>
+      {/* <Student/> */}
     </div>
   );
 }

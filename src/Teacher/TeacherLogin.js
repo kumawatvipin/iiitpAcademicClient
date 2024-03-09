@@ -11,8 +11,8 @@ import {
   getItem,
 } from "../utils/localStorage";
 import { useDispatch } from "react-redux";
-import { setcount, showToast } from "../slice/appConfigSlice";
-import { TOAST_ERROR, TOAST_SUCCESS } from "../App";
+import {  showToast } from "../slice/appConfigSlice";
+import { TOAST_SUCCESS } from "../App";
 // import {  TeacherSubject, getItem } from "../utils/localStorage";
 function Login() {
   const navigate = useNavigate();
@@ -26,6 +26,7 @@ function Login() {
   //   }
   //   console.log("subject" + subject);
   const dispatch = useDispatch();
+ 
   // const [count, setcount1] = useState(0);
   async function submitHandle(e) {
     e.preventDefault();

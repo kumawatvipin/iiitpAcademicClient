@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 function SecA() {
   const navigate = useNavigate();
   const [flag, setFlag] = useState(true);
-
+  const [pop,setPop]=useState(false);
   const subject = getItem(TeacherSubject);
   const BB = () => {
     setTimeout(() => {
@@ -38,10 +38,13 @@ function SecA() {
 
   async function handleUpdate() {
     try {
+      
+    
       const user = await axiosClient.post(`attendance/update/${subject}`, {
         sec: "A",
         data,
       });
+     
       alert("Submitted");
     } catch (error) {
       alert(error);

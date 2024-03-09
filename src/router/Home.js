@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import arrow from "../assets/img/link.png";
 import saraswati from "../assets/img/saraswati.png";
 import Footer from "./Footer";
+import UpcomingFeatures from "./UpcomingFeatures";
 function Home() {
   const features = [
     {
@@ -134,10 +135,11 @@ function Home() {
         </div>
       </div>
 
+      <UpcomingFeatures />
       <motion.h2
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 4, delay: 4.5 }}
+        transition={{ duration: 4, delay: 6.5 }}
         className=""
       >
         {<Footer />}

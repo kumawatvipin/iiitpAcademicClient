@@ -13,7 +13,6 @@ import {
 } from "../utils/localStorage";
 
 function TeacherSignup() {
-  console.log("TeacherSignup rendered");
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
